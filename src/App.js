@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { Usercontext } from './component/context';
+import Display from "./component/Display";
+import { useState } from 'react';
+import Item from './component/Item';
+import { Route,BrowserRouter,Routes } from 'react-router-dom';
 function App() {
+  let [datas,setdatas] = useState("akshat");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+    <Usercontext.Provider value={datas}>
+      <Routes>
+        <Route path='/' element={<Display></Display>}></Route>
+        <Route path='/item' element={<Item></Item>}></Route>
+      </Routes>
+    {/* <h1>Context</h1> */}
+    </Usercontext.Provider>
+    </BrowserRouter>
+    </>
   );
 }
 
