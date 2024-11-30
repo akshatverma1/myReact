@@ -4,15 +4,13 @@ export default function Api() {
     let Url = "https://dummyjson.com/products";
     let [apidta, setApidta] = useState([]);
 
-<<<<<<< HEAD
 
-=======
-    let details =
-        "when the In dependices array is null then the useeffect is call when the page is reload.when the dependices section is null no array and no Dependencies the then useEffect is call every re-render";
-    console.log(details);
+
+
+  
 
 // "when the In dependices array is null then the useeffect is call when the page is reload.when the dependices section is null no array and no Dependencies the then useEffect is call every re-render
->>>>>>> 25440d20742f86c0cc2a28bed05f90b179175e43
+
     useEffect(() => {
         fetch(Url).then((Response) => { Response.json().then((data) => { setApidta(data.products) }) });
     }, [])
