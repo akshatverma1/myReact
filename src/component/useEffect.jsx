@@ -9,7 +9,8 @@ export default function Api() {
 
   
 
-// "when the In dependices array is null then the useeffect is call when the page is reload.when the dependices section is null no array and no Dependencies the then useEffect is call every re-render
+    // "when the In dependices array is null then the useeffect is call when the page is reload.
+    // when the dependices section is null no array and no Dependencies the then useEffect is call every re-render
 
     useEffect(() => {
         fetch(Url).then((Response) => { Response.json().then((data) => { setApidta(data.products) }) });
